@@ -1,6 +1,33 @@
+//create the array of card value sets, const for buttons
+
+const cardValues=[2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10];
+const hit=document.querySelector(".btn__hit");
+const settle=document.querySelector(".btn__settle");
+const ace=document.querySelector(".btn__ace");
 
 
-//create 2 player slots
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//create 1-2 player slots
 //game has 3 buttons for each player
 //one button calls for card, another one states that you are finished and ace card button
 //dealer randomly adds cards till it contains over 17 in value

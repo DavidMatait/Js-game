@@ -1,4 +1,10 @@
-//create 2 player slots
+"use strict";
+
+//create the array of card value sets, const for buttons
+var cardValues = [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+var hit = document.querySelector(".btn__hit");
+var settle = document.querySelector(".btn__settle");
+var ace = document.querySelector(".btn__ace"); //create 1-2 player slots
 //game has 3 buttons for each player
 //one button calls for card, another one states that you are finished and ace card button
 //dealer randomly adds cards till it contains over 17 in value
@@ -20,4 +26,3 @@
 //if player don't exeed 21 and holds, dealer runs function to get own result
 // results are compared and closest to 21 wins
 //reset button, resets the game and array to its original form
-"use strict";
