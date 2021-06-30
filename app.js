@@ -10,38 +10,31 @@ const dealerM=document.querySelector(".display-dm");
 const playerM=document.querySelector(".display-pm");
 
 //pick random item from array
-
-let randomItem=cardValues[Math.floor(Math.random()*cardValues.length)];
-console.log(randomItem);
-
+//let randomItem=cardValues[Math.floor(Math.random()*cardValues.length)];
+//console.log(randomItem);
+//-------------------------------------------------------------
 
 //use hit button to add random item on display
 
 const getRandomItem=(item)=>`<p>${item}<p>`;
 
 hit.addEventListener('click', function() {
+  let randomItem=cardValues[Math.floor(Math.random()*cardValues.length)];
   let newDisplayP = '';
   newDisplayP += getRandomItem(randomItem);
   playerDisplay.innerHTML = newDisplayP;
+
+  if(newDisplayP>0 && newDisplayP<22){
+    playerM.innerHTML=newDisplayP.innerHTML}
 });
 
-//add new random item to the current result
+//add current random item to smaller display
 
 
-
-
-
-
-
-
-
-//for(let i=0;i<cardValues.length;i++){
-//  const randomElement=cardValues[Math.floor(Math.random()*cardValues.length)]
- // if(dealerResults[randomElement]){
-  //  dealerResults[randomElement]++
-  //} else{dealerResults[randomElement]=1}
-//}
-//console.log(dealerResults[1]);
+  hit.addEventListener('click', function() {
+    if(playerDisplay.innerHTML>0 && playerDisplay.innerHTML<22){
+    playerM=playerDisplay.innerHTML}
+  });
 
 
 
