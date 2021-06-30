@@ -1,12 +1,47 @@
-//create the array of card value sets, const for buttons
+//create the array of card value sets, const for buttons,const displays
 
-const cardValues=[2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10];
+const cardValues=[2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,1,1,1,1];
 const hit=document.querySelector(".btn__hit");
 const settle=document.querySelector(".btn__settle");
 const ace=document.querySelector(".btn__ace");
+const dealerDisplay=document.querySelector(".display-d");
+const playerDisplay=document.querySelector(".display-p");
+const dealerM=document.querySelector(".display-dm");
+const playerM=document.querySelector(".display-pm");
+
+//pick random item from array
+
+let randomItem=cardValues[Math.floor(Math.random()*cardValues.length)];
+console.log(randomItem);
+
+
+//use hit button to add random item on display
+
+const getRandomItem=(item)=>`<p>${item}<p>`;
+
+hit.addEventListener('click', function() {
+  let newDisplayP = '';
+  newDisplayP += getRandomItem(randomItem);
+  playerDisplay.innerHTML = newDisplayP;
+});
+
+//add new random item to the current result
 
 
 
+
+
+
+
+
+
+//for(let i=0;i<cardValues.length;i++){
+//  const randomElement=cardValues[Math.floor(Math.random()*cardValues.length)]
+ // if(dealerResults[randomElement]){
+  //  dealerResults[randomElement]++
+  //} else{dealerResults[randomElement]=1}
+//}
+//console.log(dealerResults[1]);
 
 
 

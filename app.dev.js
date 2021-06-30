@@ -1,10 +1,35 @@
 "use strict";
 
-//create the array of card value sets, const for buttons
-var cardValues = [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+//create the array of card value sets, const for buttons,const displays
+var cardValues = [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 1, 1, 1];
 var hit = document.querySelector(".btn__hit");
 var settle = document.querySelector(".btn__settle");
-var ace = document.querySelector(".btn__ace"); //create 1-2 player slots
+var ace = document.querySelector(".btn__ace");
+var dealerDisplay = document.querySelector(".display-d");
+var playerDisplay = document.querySelector(".display-p");
+var dealerM = document.querySelector(".display-dm");
+var playerM = document.querySelector(".display-pm"); //pick random item from array
+
+var randomItem = cardValues[Math.floor(Math.random() * cardValues.length)];
+console.log(randomItem); //use hit button to add random item on display
+
+var getRandomItem = function getRandomItem(item) {
+  return "<p>".concat(item, "<p>");
+};
+
+hit.addEventListener('click', function () {
+  var newDisplayP = '';
+  newDisplayP += getRandomItem(randomItem);
+  playerDisplay.innerHTML = newDisplayP;
+}); //add new random item to the current result
+//for(let i=0;i<cardValues.length;i++){
+//  const randomElement=cardValues[Math.floor(Math.random()*cardValues.length)]
+// if(dealerResults[randomElement]){
+//  dealerResults[randomElement]++
+//} else{dealerResults[randomElement]=1}
+//}
+//console.log(dealerResults[1]);
+//create 1-2 player slots
 //game has 3 buttons for each player
 //one button calls for card, another one states that you are finished and ace card button
 //dealer randomly adds cards till it contains over 17 in value
