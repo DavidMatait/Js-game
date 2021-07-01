@@ -1,7 +1,5 @@
 "use strict";
 
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
-
 //create the array of card value sets, const for buttons,const displays
 var cardValues = [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 1, 1, 1];
 var hit = document.querySelector(".btn__hit");
@@ -15,6 +13,7 @@ var playerM = document.querySelector(".display-pm"); //pick random item from arr
 //console.log(randomItem);
 //-------------------------------------------------------------
 //use hit button to add random item on display
+//add current random item to smaller display
 
 var getRandomItem = function getRandomItem(item) {
   return "<p>".concat(item, "<p>");
@@ -22,19 +21,20 @@ var getRandomItem = function getRandomItem(item) {
 
 hit.addEventListener('click', function () {
   var randomItem = cardValues[Math.floor(Math.random() * cardValues.length)];
-  var newDisplayP = '';
-  newDisplayP += getRandomItem(randomItem);
+  var newDisplayP = [];
+  newDisplayP += [getRandomItem(randomItem)];
   playerDisplay.innerHTML = newDisplayP;
+  addValueP = [newDisplayP]; //covert innerhtml to array
 
-  if (newDisplayP > 0 && newDisplayP < 22) {
-    playerM.innerHTML = newDisplayP.innerHTML;
-  }
-}); //add current random item to smaller display
+  var parsedValue2 = addValueP.map(function (item) {
+    return parseInt(item.replace("<p>", "").replace("</p>", ""));
+  });
+  console.log(parsedValue2); //add current value to total
+  //if(addValueP>0){
+  //   const total=(parsedValue,)
+  // }
 
-hit.addEventListener('click', function () {
-  if (playerDisplay.innerHTML > 0 && playerDisplay.innerHTML < 22) {
-    playerM = (_readOnlyError("playerM"), playerDisplay.innerHTML);
-  }
+  playerM.innerHTML = addValueP;
 }); //create 1-2 player slots
 //game has 3 buttons for each player
 //one button calls for card, another one states that you are finished and ace card button

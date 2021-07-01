@@ -15,27 +15,46 @@ const playerM=document.querySelector(".display-pm");
 //-------------------------------------------------------------
 
 //use hit button to add random item on display
+//add current random item to smaller display
+
 
 const getRandomItem=(item)=>`<p>${item}<p>`;
 
 hit.addEventListener('click', function() {
   let randomItem=cardValues[Math.floor(Math.random()*cardValues.length)];
-  let newDisplayP = '';
-  newDisplayP += getRandomItem(randomItem);
+  let newDisplayP = [];
+
+
+  newDisplayP += [getRandomItem(randomItem)];
+ 
   playerDisplay.innerHTML = newDisplayP;
 
-  if(newDisplayP>0 && newDisplayP<22){
-    playerM.innerHTML=newDisplayP.innerHTML}
-});
 
-//add current random item to smaller display
+  addValueP=[newDisplayP];
+  //covert innerhtml to array
+
+  let parsedValue=addValueP.map(item=>parseInt(item.replace("<p>","").replace("</p>","")));
+  console.log(parsedValue);
+ //add current value to total
+  if(addValueP>0){
+    const total=(parsedValue,)
+  }
+  
+ 
 
 
-  hit.addEventListener('click', function() {
-    if(playerDisplay.innerHTML>0 && playerDisplay.innerHTML<22){
-    playerM=playerDisplay.innerHTML}
+  playerM.innerHTML=addValueP;
+
+
+
   });
 
+ 
+
+
+
+
+ 
 
 
 
