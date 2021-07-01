@@ -26,10 +26,12 @@ hit.addEventListener('click', function() {
 
   newDisplayP += [getRandomItem(randomItem)];
   playerDisplay.innerHTML = newDisplayP;
-  console.log(newDisplayP);
+  console.log(playerDisplay.innerHTML);
+  
 
   //covert innerhtml to array
   addValueP=[newDisplayP];
+  console.log(addValueP);
 
   let parsedValue = [getRandomItem(randomItem)].map(item=>parseInt(item.replace("<p>","").replace("</p>","")));
   console.log(parsedValue);
@@ -39,14 +41,22 @@ hit.addEventListener('click', function() {
  //add current value to total
 
 
-  let sum=eval(parsedValue[0]+parsedValue[0]);
+if(playerM.innerHTML!=playerDisplay.innerHTML){
   
-   playerM.innerHTML=sum;
-  
- 
+  playerM.innerHTML=parsedValue2;
+  console.log(playerM.innerHTML);
+}else if(playerM.innerHTML===playerDisplay.innerHTML){
+//let sum=eval(parsedValue[0]+parsedValue[0]);
+//playerM.innerHTML=sum;
+console.log("yes");
+
+}
 
 
-  
+
+//let sum=eval(parsedValue[0]+parsedValue[0]);
+//return playerM.innerHTML=sum;
+
 
 
 
