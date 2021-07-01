@@ -24,17 +24,20 @@ hit.addEventListener('click', function () {
   var newDisplayP = [];
   newDisplayP += [getRandomItem(randomItem)];
   playerDisplay.innerHTML = newDisplayP;
-  addValueP = [newDisplayP]; //covert innerhtml to array
+  console.log(newDisplayP); //covert innerhtml to array
 
+  addValueP = [newDisplayP];
+  var parsedValue = [getRandomItem(randomItem)].map(function (item) {
+    return parseInt(item.replace("<p>", "").replace("</p>", ""));
+  });
+  console.log(parsedValue);
   var parsedValue2 = addValueP.map(function (item) {
     return parseInt(item.replace("<p>", "").replace("</p>", ""));
   });
   console.log(parsedValue2); //add current value to total
-  //if(addValueP>0){
-  //   const total=(parsedValue,)
-  // }
 
-  playerM.innerHTML = addValueP;
+  var sum = eval(parsedValue[0] + parsedValue[0]);
+  playerM.innerHTML = sum;
 }); //create 1-2 player slots
 //game has 3 buttons for each player
 //one button calls for card, another one states that you are finished and ace card button

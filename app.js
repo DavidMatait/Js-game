@@ -24,26 +24,29 @@ hit.addEventListener('click', function() {
   let randomItem=cardValues[Math.floor(Math.random()*cardValues.length)];
   let newDisplayP = [];
 
-
   newDisplayP += [getRandomItem(randomItem)];
- 
   playerDisplay.innerHTML = newDisplayP;
+  console.log(newDisplayP);
 
-
-  addValueP=[newDisplayP];
   //covert innerhtml to array
+  addValueP=[newDisplayP];
 
-  let parsedValue=addValueP.map(item=>parseInt(item.replace("<p>","").replace("</p>","")));
+  let parsedValue = [getRandomItem(randomItem)].map(item=>parseInt(item.replace("<p>","").replace("</p>","")));
   console.log(parsedValue);
+
+  let parsedValue2=addValueP.map(item=>parseInt(item.replace("<p>","").replace("</p>","")));
+  console.log(parsedValue2);
  //add current value to total
-  if(addValueP>0){
-    const total=(parsedValue,)
-  }
+
+
+  let sum=eval(parsedValue[0]+parsedValue[0]);
+  
+   playerM.innerHTML=sum;
   
  
 
 
-  playerM.innerHTML=addValueP;
+  
 
 
 
