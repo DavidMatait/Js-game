@@ -22,10 +22,10 @@ const getRandomItem=(item)=>`<p>${item}<p>`;
 
 hit.addEventListener('click', function() {
   let randomItem=cardValues[Math.floor(Math.random()*cardValues.length)];
-  let newDisplayP = [];
+  let newDisplayP = '';
 
   newDisplayP += [getRandomItem(randomItem)];
-  playerDisplay.innerHTML = newDisplayP;
+ // playerDisplay.innerHTML = newDisplayP;
   console.log(playerDisplay.innerHTML);
   
 
@@ -41,13 +41,15 @@ hit.addEventListener('click', function() {
  //add current value to total
 
 
-if(playerM.innerHTML!=playerDisplay.innerHTML){
+if(playerDisplay.innerHTML===playerM.innerHTML){
   
-  playerM.innerHTML=parsedValue2;
+  playerDisplay.innerHTML = newDisplayP;
+  playerM.innerHTML=parsedValue;
   console.log(playerM.innerHTML);
-}else if(playerM.innerHTML===playerDisplay.innerHTML){
-//let sum=eval(parsedValue[0]+parsedValue[0]);
-//playerM.innerHTML=sum;
+
+}else if(addValueP[0]!=playerDisplay.innerHTML){
+let sum=eval(parsedValue[0]+parsedValue[0]);
+playerM.innerHTML=sum;
 console.log("yes");
 
 }

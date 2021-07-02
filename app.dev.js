@@ -21,9 +21,9 @@ var getRandomItem = function getRandomItem(item) {
 
 hit.addEventListener('click', function () {
   var randomItem = cardValues[Math.floor(Math.random() * cardValues.length)];
-  var newDisplayP = [];
-  newDisplayP += [getRandomItem(randomItem)];
-  playerDisplay.innerHTML = newDisplayP;
+  var newDisplayP = '';
+  newDisplayP += [getRandomItem(randomItem)]; // playerDisplay.innerHTML = newDisplayP;
+
   console.log(playerDisplay.innerHTML); //covert innerhtml to array
 
   addValueP = [newDisplayP];
@@ -37,12 +37,13 @@ hit.addEventListener('click', function () {
   });
   console.log(parsedValue2); //add current value to total
 
-  if (playerM.innerHTML != playerDisplay.innerHTML) {
-    playerM.innerHTML = parsedValue2;
+  if (playerDisplay.innerHTML === playerM.innerHTML) {
+    playerDisplay.innerHTML = newDisplayP;
+    playerM.innerHTML = parsedValue;
     console.log(playerM.innerHTML);
-  } else if (playerM.innerHTML === playerDisplay.innerHTML) {
-    //let sum=eval(parsedValue[0]+parsedValue[0]);
-    //playerM.innerHTML=sum;
+  } else if (addValueP[0] != playerDisplay.innerHTML) {
+    var sum = eval(parsedValue[0] + parsedValue[0]);
+    playerM.innerHTML = sum;
     console.log("yes");
   } //let sum=eval(parsedValue[0]+parsedValue[0]);
   //return playerM.innerHTML=sum;
