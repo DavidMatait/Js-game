@@ -22,9 +22,7 @@ var getRandomItem = function getRandomItem(item) {
 hit.addEventListener('click', function () {
   var randomItem = cardValues[Math.floor(Math.random() * cardValues.length)];
   var newDisplayP = '';
-  newDisplayP += [getRandomItem(randomItem)]; // playerDisplay.innerHTML = newDisplayP;
-
-  console.log(playerDisplay.innerHTML); //covert innerhtml to array
+  newDisplayP += [getRandomItem(randomItem)]; //covert innerhtml to array
 
   addValueP = [newDisplayP];
   console.log(addValueP);
@@ -36,19 +34,32 @@ hit.addEventListener('click', function () {
     return parseInt(item.replace("<p>", "").replace("</p>", ""));
   });
   console.log(parsedValue2); //add current value to total
+  // seperate screens, use if to make conditions
 
-  if (playerDisplay.innerHTML === playerM.innerHTML) {
-    playerDisplay.innerHTML = newDisplayP;
-    playerM.innerHTML = parsedValue;
+  var added = ''; //function hitBtn(playerDisplay,playerM,parsedValue,parsedValue2){
+
+  if (playerDisplay.innerHTML === playerM.innerHTML && added < 22) {
+    added = parsedValue2[0];
+    playerDisplay.innerHTML = addValueP;
+    playerM.innerHTML = added;
     console.log(playerM.innerHTML);
-  } else if (addValueP[0] != playerDisplay.innerHTML) {
-    var sum = eval(parsedValue[0] + parsedValue[0]);
-    playerM.innerHTML = sum;
-    console.log("yes");
-  } //let sum=eval(parsedValue[0]+parsedValue[0]);
+    console.log(added); // add last result plus new result
+  } else if (addValueP != parsedValue && added < 22) {
+    added = added + parsedValue2[0];
+    console.log(parsedValue2[0]);
+    console.log(added);
+    playerDisplay.innerHTML = addValueP;
+    playerM.innerHTML = added;
+    console.log("else if 1");
+  } else if (added > 21) {
+    playerM.innerHTML = "You lost!";
+  } //}
+  //let sum=eval(parsedValue[0]+parsedValue[0]);
   //return playerM.innerHTML=sum;
 
-}); //create 1-2 player slots
+}); //complete total result
+//settle runs in same way as hit but automatically using loop till it exceeds 17 or over 21
+//create 1-2 player slots
 //game has 3 buttons for each player
 //one button calls for card, another one states that you are finished and ace card button
 //dealer randomly adds cards till it contains over 17 in value

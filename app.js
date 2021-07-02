@@ -25,8 +25,7 @@ hit.addEventListener('click', function() {
   let newDisplayP = '';
 
   newDisplayP += [getRandomItem(randomItem)];
- // playerDisplay.innerHTML = newDisplayP;
-  console.log(playerDisplay.innerHTML);
+  
   
 
   //covert innerhtml to array
@@ -39,37 +38,54 @@ hit.addEventListener('click', function() {
   let parsedValue2=addValueP.map(item=>parseInt(item.replace("<p>","").replace("</p>","")));
   console.log(parsedValue2);
  //add current value to total
+// seperate screens, use if to make conditions
+let added='';
+//function hitBtn(playerDisplay,playerM,parsedValue,parsedValue2){
 
+if(playerDisplay.innerHTML===playerM.innerHTML && added<22){
+ 
+  added=parsedValue2[0]
+  playerDisplay.innerHTML = addValueP;
+  playerM.innerHTML=added;
 
-if(playerDisplay.innerHTML===playerM.innerHTML){
-  
-  playerDisplay.innerHTML = newDisplayP;
-  playerM.innerHTML=parsedValue;
   console.log(playerM.innerHTML);
+  console.log(added);
+  
+// add last result plus new result
 
-}else if(addValueP[0]!=playerDisplay.innerHTML){
-let sum=eval(parsedValue[0]+parsedValue[0]);
-playerM.innerHTML=sum;
-console.log("yes");
+}else if(addValueP!=parsedValue && added<22){
 
+  added=added+parsedValue2[0]
+
+  console.log(parsedValue2[0]);
+  console.log(added);
+
+  playerDisplay.innerHTML =addValueP;
+  playerM.innerHTML=added;
+
+  console.log("else if 1");
+
+}else if(added>21){
+  playerM.innerHTML="You lost!"
 }
 
-
+//}
 
 //let sum=eval(parsedValue[0]+parsedValue[0]);
 //return playerM.innerHTML=sum;
 
 
 
-
   });
 
- 
 
 
 
 
  
+//complete total result
+//settle runs in same way as hit but automatically using loop till it exceeds 17 or over 21
+
 
 
 
