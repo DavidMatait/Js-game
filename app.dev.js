@@ -19,6 +19,7 @@ var getRandomItem = function getRandomItem(item) {
   return "<p>".concat(item, "<p>");
 };
 
+var added = '';
 hit.addEventListener('click', function () {
   var randomItem = cardValues[Math.floor(Math.random() * cardValues.length)];
   var newDisplayP = '';
@@ -26,37 +27,36 @@ hit.addEventListener('click', function () {
 
   addValueP = [newDisplayP];
   console.log(addValueP);
-  var parsedValue = [getRandomItem(randomItem)].map(function (item) {
-    return parseInt(item.replace("<p>", "").replace("</p>", ""));
-  });
-  console.log(parsedValue);
   var parsedValue2 = addValueP.map(function (item) {
     return parseInt(item.replace("<p>", "").replace("</p>", ""));
   });
   console.log(parsedValue2); //add current value to total
   // seperate screens, use if to make conditions
+  //let added='';
 
-  var added = ''; //function hitBtn(playerDisplay,playerM,parsedValue,parsedValue2){
+  console.log(added);
 
-  if (playerDisplay.innerHTML === playerM.innerHTML && added < 22) {
+  if (playerDisplay.innerHTML === playerM.innerHTML && added <= 21) {
     added = parsedValue2[0];
     playerDisplay.innerHTML = addValueP;
     playerM.innerHTML = added;
     console.log(playerM.innerHTML);
     console.log(added); // add last result plus new result
-  } else if (addValueP != parsedValue && added < 22) {
+  } else if (addValueP != parsedValue2 && added <= 21) {
+    console.log(added);
     added = added + parsedValue2[0];
     console.log(parsedValue2[0]);
     console.log(added);
     playerDisplay.innerHTML = addValueP;
     playerM.innerHTML = added;
-    console.log("else if 1");
-  } else if (added > 21) {
-    playerM.innerHTML = "You lost!";
-  } //}
-  //let sum=eval(parsedValue[0]+parsedValue[0]);
-  //return playerM.innerHTML=sum;
 
+    if (playerM.innerHTML > 21) {
+      playerM.innerHTML = 0;
+      playerDisplay.innerHTML = "You lost!";
+    }
+
+    console.log(playerM.innerHTML);
+  }
 }); //complete total result
 //settle runs in same way as hit but automatically using loop till it exceeds 17 or over 21
 //create 1-2 player slots

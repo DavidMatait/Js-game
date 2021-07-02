@@ -17,34 +17,28 @@ const playerM=document.querySelector(".display-pm");
 //use hit button to add random item on display
 //add current random item to smaller display
 
-
 const getRandomItem=(item)=>`<p>${item}<p>`;
-
+let added='';
 hit.addEventListener('click', function() {
   let randomItem=cardValues[Math.floor(Math.random()*cardValues.length)];
   let newDisplayP = '';
 
   newDisplayP += [getRandomItem(randomItem)];
   
-  
-
   //covert innerhtml to array
   addValueP=[newDisplayP];
   console.log(addValueP);
-
-  let parsedValue = [getRandomItem(randomItem)].map(item=>parseInt(item.replace("<p>","").replace("</p>","")));
-  console.log(parsedValue);
 
   let parsedValue2=addValueP.map(item=>parseInt(item.replace("<p>","").replace("</p>","")));
   console.log(parsedValue2);
  //add current value to total
 // seperate screens, use if to make conditions
-let added='';
-//function hitBtn(playerDisplay,playerM,parsedValue,parsedValue2){
+//let added='';
 
-if(playerDisplay.innerHTML===playerM.innerHTML && added<22){
+console.log(added);
+if(playerDisplay.innerHTML===playerM.innerHTML && added<=21){
  
-  added=parsedValue2[0]
+  added=parsedValue2[0];
   playerDisplay.innerHTML = addValueP;
   playerM.innerHTML=added;
 
@@ -53,9 +47,9 @@ if(playerDisplay.innerHTML===playerM.innerHTML && added<22){
   
 // add last result plus new result
 
-}else if(addValueP!=parsedValue && added<22){
-
-  added=added+parsedValue2[0]
+}else if(addValueP!=parsedValue2 && added<=21 ){
+  console.log(added);
+  added=added+parsedValue2[0];
 
   console.log(parsedValue2[0]);
   console.log(added);
@@ -63,19 +57,14 @@ if(playerDisplay.innerHTML===playerM.innerHTML && added<22){
   playerDisplay.innerHTML =addValueP;
   playerM.innerHTML=added;
 
-  console.log("else if 1");
+  if(playerM.innerHTML>21){
+    playerM.innerHTML=0;
+    playerDisplay.innerHTML="You lost!"
+  }
 
-}else if(added>21){
-  playerM.innerHTML="You lost!"
+  console.log(playerM.innerHTML);
+
 }
-
-//}
-
-//let sum=eval(parsedValue[0]+parsedValue[0]);
-//return playerM.innerHTML=sum;
-
-
-
   });
 
 
