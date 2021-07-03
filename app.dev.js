@@ -1,6 +1,7 @@
 "use strict";
 
 //create the array of card value sets, const for buttons,const displays
+//define variables
 var cardValues = [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 1, 1, 1];
 var hit = document.querySelector(".btn__hit");
 var settle = document.querySelector(".btn__settle");
@@ -8,45 +9,31 @@ var ace = document.querySelector(".btn__ace");
 var dealerDisplay = document.querySelector(".display-d");
 var playerDisplay = document.querySelector(".display-p");
 var dealerM = document.querySelector(".display-dm");
-var playerM = document.querySelector(".display-pm"); //pick random item from array
-//let randomItem=cardValues[Math.floor(Math.random()*cardValues.length)];
-//console.log(randomItem);
-//-------------------------------------------------------------
-//use hit button to add random item on display
-//add current random item to smaller display
+var playerM = document.querySelector(".display-pm"); //use hit button to add random item on display + add current random item to smaller display
 
 var getRandomItem = function getRandomItem(item) {
   return "<p>".concat(item, "<p>");
 };
 
 var added = '';
+var added2 = '';
 hit.addEventListener('click', function () {
+  //pick random item from array
   var randomItem = cardValues[Math.floor(Math.random() * cardValues.length)];
   var newDisplayP = '';
-  newDisplayP += [getRandomItem(randomItem)]; //covert innerhtml to array
-
+  newDisplayP += [getRandomItem(randomItem)];
   addValueP = [newDisplayP];
-  console.log(addValueP);
   var parsedValue2 = addValueP.map(function (item) {
     return parseInt(item.replace("<p>", "").replace("</p>", ""));
-  });
-  console.log(parsedValue2); //add current value to total
-  // seperate screens, use if to make conditions
-  //let added='';
-
-  console.log(added);
+  }); //add current value to total + determine when player lost
 
   if (playerDisplay.innerHTML === playerM.innerHTML && added <= 21) {
     added = parsedValue2[0];
     playerDisplay.innerHTML = addValueP;
     playerM.innerHTML = added;
-    console.log(playerM.innerHTML);
-    console.log(added); // add last result plus new result
   } else if (addValueP != parsedValue2 && added <= 21) {
     console.log(added);
     added = added + parsedValue2[0];
-    console.log(parsedValue2[0]);
-    console.log(added);
     playerDisplay.innerHTML = addValueP;
     playerM.innerHTML = added;
 
@@ -54,8 +41,32 @@ hit.addEventListener('click', function () {
       playerM.innerHTML = 0;
       playerDisplay.innerHTML = "You lost!";
     }
+  }
+}); // create settle button to run automatically after player decided own result
 
-    console.log(playerM.innerHTML);
+settle.addEventListener('click', function () {
+  //pick random item from array
+  var randomItem = cardValues[Math.floor(Math.random() * cardValues.length)];
+  var newDisplayD = '';
+  newDisplayD += [getRandomItem(randomItem)];
+  addValueD = [newDisplayD];
+  var parsedValue2 = addValueD.map(function (item) {
+    return parseInt(item.replace("<p>", "").replace("</p>", ""));
+  }); //add current value to total + determine when player lost
+
+  if (dealerDisplay.innerHTML === dealerM.innerHTML && added2 <= 21) {
+    added2 = parsedValue2[0];
+    dealerDisplay.innerHTML = addValueD;
+    dealerM.innerHTML = added2;
+  } else if (addValueD != parsedValue2 && added2 <= 21) {
+    added2 = added2 + parsedValue2[0];
+    dealerDisplay.innerHTML = addValueD;
+    dealerM.innerHTML = added2;
+
+    if (dealerM.innerHTML > 21) {
+      dealerM.innerHTML = 0;
+      dealerDisplay.innerHTML = "You lost!";
+    }
   }
 }); //complete total result
 //settle runs in same way as hit but automatically using loop till it exceeds 17 or over 21
