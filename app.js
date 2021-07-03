@@ -47,7 +47,19 @@ if(playerDisplay.innerHTML===playerM.innerHTML && added<=21){
   });
 
 // create settle button to run automatically after player decided own result
+let repeater=true;
+
 settle.addEventListener('click', function() {
+  
+
+  function clickButton(event) {
+    if(added2<=17){
+  settle.click();
+  }else{
+    event.preventDefault()
+  }}
+  setInterval(clickButton, 2000);
+
 
   //pick random item from array
    let randomItem=cardValues[Math.floor(Math.random()*cardValues.length)];
@@ -61,19 +73,21 @@ settle.addEventListener('click', function() {
    added2=parsedValue2[0];
    dealerDisplay.innerHTML = addValueD;
    dealerM.innerHTML=added2;
- 
+
  }else if(addValueD!=parsedValue2 && added2<=21 ){
 
    added2=added2+parsedValue2[0];
    dealerDisplay.innerHTML =addValueD;
    dealerM.innerHTML=added2;
- 
+
    if(dealerM.innerHTML>21){
      dealerM.innerHTML=0;
      dealerDisplay.innerHTML="You lost!"
    }
  }
    });
+
+//button clicks itself
 
 
 

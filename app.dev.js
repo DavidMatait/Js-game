@@ -44,8 +44,18 @@ hit.addEventListener('click', function () {
   }
 }); // create settle button to run automatically after player decided own result
 
+var repeater = true;
 settle.addEventListener('click', function () {
-  //pick random item from array
+  function clickButton(event) {
+    if (added2 <= 17) {
+      settle.click();
+    } else {
+      event.preventDefault();
+    }
+  }
+
+  setInterval(clickButton, 2000); //pick random item from array
+
   var randomItem = cardValues[Math.floor(Math.random() * cardValues.length)];
   var newDisplayD = '';
   newDisplayD += [getRandomItem(randomItem)];
@@ -68,7 +78,8 @@ settle.addEventListener('click', function () {
       dealerDisplay.innerHTML = "You lost!";
     }
   }
-}); //complete total result
+}); //button clicks itself
+//complete total result
 //settle runs in same way as hit but automatically using loop till it exceeds 17 or over 21
 //create 1-2 player slots
 //game has 3 buttons for each player
