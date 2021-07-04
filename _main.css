@@ -13,13 +13,58 @@ h1 {
   color: white;
 }
 
-main {
+.wrap {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.left {
   margin-top: 2vh;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 30%;
+  height: 88vh;
+  background-color: navy;
+}
+.left h2 {
+  margin: 0 50px 0 50px;
+  color: white;
+  font-size: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.left .list {
+  margin: 0 20px 0 20px;
+  border: 2px solid white;
+  border-radius: 30px;
+}
+.left .list li {
+  margin: 30px;
+  color: white;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.right {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  height: 88vh;
+  background-color: navy;
+}
+
+main {
+  margin: 2vh 30px 0 30px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
   height: 88vh;
   background-color: navy;
 }

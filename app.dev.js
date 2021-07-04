@@ -38,11 +38,6 @@ hit.addEventListener('click', function () {
     added = added + parsedValue2[0];
     playerDisplay.innerHTML = addValueP;
     playerM.innerHTML = added;
-
-    if (playerM.innerHTML > 21) {
-      playerM.innerHTML = 0;
-      playerDisplay.innerHTML = "You lost!";
-    }
   }
 }); // create settle button to run automatically after player decided own result
 

@@ -39,10 +39,6 @@ if(playerDisplay.innerHTML===playerM.innerHTML && added<=21){
   playerDisplay.innerHTML =addValueP;
   playerM.innerHTML=added;
 
-  if(playerM.innerHTML>21){
-    playerM.innerHTML=0;
-    playerDisplay.innerHTML="You lost!"
-  }
 }
   });
 
