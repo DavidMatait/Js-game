@@ -1,7 +1,7 @@
 "use strict";
 
 //create the array of card value sets, const for buttons,const displays
-//define variables
+//define const
 var cardValues = [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 1, 1, 1, 1];
 var hit = document.querySelector(".btn__hit");
 var settle = document.querySelector(".btn__settle");
@@ -9,14 +9,16 @@ var ace = document.querySelector(".btn__ace");
 var dealerDisplay = document.querySelector(".display-d");
 var playerDisplay = document.querySelector(".display-p");
 var dealerM = document.querySelector(".display-dm");
-var playerM = document.querySelector(".display-pm"); //use hit button to add random item on display + add current random item to smaller display
+var playerM = document.querySelector(".display-pm");
 
 var getRandomItem = function getRandomItem(item) {
   return "<p>".concat(item, "<p>");
-};
+}; //define variables
+
 
 var added = '';
-var added2 = '';
+var added2 = ''; //use hit button to add random item on display + add current random item to smaller display
+
 hit.addEventListener('click', function () {
   //pick random item from array
   var randomItem = cardValues[Math.floor(Math.random() * cardValues.length)];
@@ -76,12 +78,27 @@ settle.addEventListener('click', function () {
     if (dealerM.innerHTML > 21) {
       dealerM.innerHTML = 0;
       dealerDisplay.innerHTML = "You lost!";
+    } //compare results
+
+
+    if (added > added2 && added2 > 17) {
+      dealerM.innerHTML = 0;
+      dealerDisplay.innerHTML = added2;
+      playerM.innerHTML = added;
+      playerDisplay.innerHTML = "You won!";
+    } else if (added === added2 && added2 > 17) {
+      dealerM.innerHTML = added2;
+      dealerDisplay.innerHTML = "Draw!";
+      playerM.innerHTML = added;
+      playerDisplay.innerHTML = "Draw!";
+    } else if (added < added2 && added2 > 17) {
+      dealerM.innerHTML = added2;
+      dealerDisplay.innerHTML = added2;
+      playerM.innerHTML = added;
+      playerDisplay.innerHTML = "You lost!";
     }
   }
-}); //button clicks itself
-//complete total result
-//settle runs in same way as hit but automatically using loop till it exceeds 17 or over 21
-//create 1-2 player slots
+}); //create 1-2 player slots
 //game has 3 buttons for each player
 //one button calls for card, another one states that you are finished and ace card button
 //dealer randomly adds cards till it contains over 17 in value

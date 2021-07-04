@@ -1,6 +1,6 @@
 
 //create the array of card value sets, const for buttons,const displays
-//define variables
+//define const
 const cardValues=[2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,1,1,1,1];
 const hit=document.querySelector(".btn__hit");
 const settle=document.querySelector(".btn__settle");
@@ -9,13 +9,13 @@ const dealerDisplay=document.querySelector(".display-d");
 const playerDisplay=document.querySelector(".display-p");
 const dealerM=document.querySelector(".display-dm");
 const playerM=document.querySelector(".display-pm");
-
-//use hit button to add random item on display + add current random item to smaller display
-
 const getRandomItem=(item)=>`<p>${item}<p>`;
+
+//define variables
 let added='';
 let added2='';
 
+//use hit button to add random item on display + add current random item to smaller display
 hit.addEventListener('click', function() {
 
  //pick random item from array
@@ -47,7 +47,6 @@ if(playerDisplay.innerHTML===playerM.innerHTML && added<=21){
   });
 
 // create settle button to run automatically after player decided own result
-
 settle.addEventListener('click', function() {
 
 // make button self clicking
@@ -58,9 +57,6 @@ settle.addEventListener('click', function() {
     event.preventDefault()
   }}
  setTimeout(clickButton,1*1500);
-
-
-
 
   //pick random item from array
    let randomItem=cardValues[Math.floor(Math.random()*cardValues.length)];
@@ -85,20 +81,29 @@ settle.addEventListener('click', function() {
      dealerM.innerHTML=0;
      dealerDisplay.innerHTML="You lost!"
    }
+
+   //compare results
+   if(added>added2 && added2>17){
+    dealerM.innerHTML=0;
+    dealerDisplay.innerHTML=added2;
+    playerM.innerHTML=added;
+    playerDisplay.innerHTML="You won!";
+  } else if(added===added2 && added2>17){
+    dealerM.innerHTML=added2;
+    dealerDisplay.innerHTML="Draw!";
+    playerM.innerHTML=added;
+    playerDisplay.innerHTML="Draw!";
+  } else if(added<added2 && added2>17){
+    dealerM.innerHTML=added2;
+    dealerDisplay.innerHTML=added2;
+    playerM.innerHTML=added;
+    playerDisplay.innerHTML="You lost!";
+  }
  }
    });
 
-//button clicks itself
 
 
-
-
-
-
-
- 
-//complete total result
-//settle runs in same way as hit but automatically using loop till it exceeds 17 or over 21
 
 
 
