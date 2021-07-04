@@ -15,7 +15,10 @@ const btnLeft=document.querySelector(".btn__left");
 const btnRight=document.querySelector(".btn__right");
 const headerR=document.querySelector(".rules");
 const listR=document.querySelector(".list");
-const listItem=document.querySelectorAll(".li__left");
+const listItem=document.getElementsByClassName("li__left");
+const mainP=document.querySelector(".main");
+const dealerStyle=document.querySelector(".dealer-display");
+const cardD=document.querySelector(".div__card-dealer");
 const getRandomItem=(item)=>`<p>${item}<p>`;
 
 //define variables
@@ -146,13 +149,6 @@ btnRight.addEventListener('click', function(){
   dealerDisplay.style.fontSize="110px";
 })
 
-
-
-
-
-
-
-
    //ace buttons
 
 
@@ -168,18 +164,6 @@ btnRight.addEventListener('click', function(){
     }
    })
 
-
-
-
-
-
-
-
-
-
-
-
-
  //  rgb(255, 64, 207)
  //  rgb(27,27,27)
 
@@ -191,65 +175,59 @@ btnRight.addEventListener('click', function(){
     btnLeft.innerHTML="Light";
     btnLeft.style.backgroundColor="rgb(255, 64, 207)";
     btnLeft.style.color="rgb(27,27,27)";
-    btnLeft.style.border= " 2px solid rgb(27,27,27)";
+    btnLeft.style.border= " 3px solid rgb(27,27,27)";
     document.querySelector(".nav").style.backgroundColor="rgb(255, 64, 207)";
     document.querySelector(".h1").style.color="rgb(27,27,27)";
     btnRight.style.backgroundColor="rgb(255, 64, 207)";
     btnRight.style.color="rgb(27,27,27)";
-    btnRight.style.border= " 2px solid rgb(27,27,27)";
+    btnRight.style.border= " 3px solid rgb(27,27,27)";
 //main section
   document.querySelector(".left").style.backgroundColor="rgb(255, 64, 207)";
   headerR.style.color="rgb(27,27,27)";
-  listR.style.border="2px solid rgb(27,27,27)";
-  listItem.style.color="rgb(27,27,27)";
+  listR.style.border="3px solid rgb(27,27,27)";
+  listItem[0].style.color="rgb(27,27,27)";
+  listItem[1].style.color="rgb(27,27,27)";
+  listItem[2].style.color="rgb(27,27,27)";
+  listItem[3].style.color="rgb(27,27,27)";
+  listItem[4].style.color="rgb(27,27,27)";
+  listItem[5].style.color="rgb(27,27,27)";
+  listItem[6].style.color="rgb(27,27,27)";
+  mainP.style.backgroundColor="rgb(255, 64, 207)";
+  dealerStyle.style.border="3px solid rgb(27,27,27)";
+  dealerStyle.style.backgroundColor="rgb(255, 64, 207)";
+  cardD.style.backgroundColor="rgb(255, 64, 207)";
+  cardD.style.border="3px solid rgb(27,27,27)";
+  dealerDisplay.style.color="rgb(27,27,27)";
+  dealerM.style.color="rgb(27,27,27)";
+    }else if(btnLeft.innerHTML==="Light"){
+    // nav bar
+    btnLeft.innerHTML="Dark";
+    btnLeft.style.backgroundColor="";
+    btnLeft.style.color="";
+    btnLeft.style.border= "";
+    document.querySelector(".nav").style.backgroundColor="";
+    document.querySelector(".h1").style.color="";
+    btnRight.style.backgroundColor="";
+    btnRight.style.color="";
+    btnRight.style.border= "";
+    //main section
+      document.querySelector(".left").style.backgroundColor="";
+      headerR.style.color="";
+      listR.style.border="";
+      listItem[0].style.color="";
+      listItem[1].style.color="";
+      listItem[2].style.color="";
+      listItem[3].style.color="";
+      listItem[4].style.color="";
+      listItem[5].style.color="";
+      listItem[6].style.color="";
+      mainP.style.backgroundColor="";
+      dealerStyle.style.border="";
+      dealerStyle.style.backgroundColor="";
+      cardD.style.backgroundColor="";
+      cardD.style.border="";
+      dealerDisplay.style.color="";
+      dealerM.style.color="";
     }
 
    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//create 1-2 player slots
-//game has 3 buttons for each player
-//one button calls for card, another one states that you are finished and ace card button
-//dealer randomly adds cards till it contains over 17 in value
-//poin of game is to not go over 21 value
-//if players have more than dealer in value not exeeding 21 they win
-
-
-//card numbers represent added value
-//any letter is worth 10
-//ace is worth 1 or 11, if player gets it, player chooses
-//after 1 or two players done, dealer automatically draws cards with randomiser till it exeeds 17
-//if it goes over 21, players win, if it is 17-21, results are compared
-
-//the code
-//standart black jack contains 6x sets of 52 cards
-//however 10 values gonna be assigned in total 2-10 and ace card
-//if player presses call button it gets random value from array containing 6sets of 52 card  values
-//value is displayed on screen
-//if player calls again random value adds up with current value
-//if value exeeds 21, player lost, display game over
-//if value does no exeed 21 and player presses hold, result is saved as different variable
-//if player don't exeed 21 and holds, dealer runs function to get own result
-// results are compared and closest to 21 wins
-
-//reset button, resets the game and array to its original form
-
