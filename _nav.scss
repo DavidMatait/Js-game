@@ -27,5 +27,18 @@ nav{
     transition: 0.6s ease;
   }
 }
+.btn__right{
+  width:5vw;
+  height: 10vh;
+  border:2px solid $prm-color;
+  background-color: $sec-color;
+  color:$prm-color;
+  font-size: 20px;
 
+  &:hover{
+    background-color: $prm-color;
+    color:$sec-color;
+    transition: 0.6s ease;
+  }
+}
 }

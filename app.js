@@ -5,7 +5,8 @@
 const cardValues=[2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,1,1,1,1];
 const hit=document.querySelector(".btn__hit");
 const settle=document.querySelector(".btn__settle");
-const ace=document.querySelector(".btn__ace");
+const ace1=document.querySelector(".ace__1");
+const ace11=document.querySelector(".ace__11");
 const dealerDisplay=document.querySelector(".display-d");
 const playerDisplay=document.querySelector(".display-p");
 const dealerM=document.querySelector(".display-dm");
@@ -86,24 +87,64 @@ settle.addEventListener('click', function() {
     dealerDisplay.innerHTML=0;
     playerM.innerHTML=added;
     playerDisplay.innerHTML="You won!";
+    //style
+    if(playerDisplay.innerHTML==="You won!"){
+      playerDisplay.style.fontSize="30px";
+    }
   } else if(added===added2 && added2>=17 && added2<=21){
     dealerM.innerHTML=added2;
     dealerDisplay.innerHTML="Draw!";
     playerM.innerHTML=added;
     playerDisplay.innerHTML="Draw!";
+    //style
+    if(playerDisplay.innerHTML==="Draw!"){
+      playerDisplay.style.fontSize="30px";
+      dealerDisplay.style.fontSize="30px";
+    }
   } else if(added<added2 && added2>=17 && added2<=21){
     dealerM.innerHTML=added2;
     dealerDisplay.innerHTML=0;
     playerM.innerHTML=added;
     playerDisplay.innerHTML="You lost!";
+    //style
+    if(playerDisplay.innerHTML==="You lost!"){
+      playerDisplay.style.fontSize="30px";
+    }
   } else if(added2>21 && added<=21) {
     dealerM.innerHTML=added2;
     dealerDisplay.innerHTML=0;
     playerM.innerHTML=added;
     playerDisplay.innerHTML="You won!";
+    //style
+    if(playerDisplay.innerHTML==="You won!"){
+      playerDisplay.style.fontSize="30px";
+    }
   }
  }
    });
+
+   //Ace button
+   if(playerDisplay.innerHTML==="1"){
+     
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  //  rgb(255, 64, 207)
  //  rgb(27,27,27)

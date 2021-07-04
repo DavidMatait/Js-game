@@ -47,6 +47,23 @@
   height: 88vh;
   background-color: #1b1b1b;
 }
+.right h2 {
+  margin: 0 50px 0 50px;
+  color: white;
+  font-size: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.right .list {
+  margin: 0 20px 0 20px;
+  border: 2px solid #ff40cf;
+  border-radius: 30px;
+}
+.right .list li {
+  margin: 30px;
+  color: #ff40cf;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
 
 main {
   margin-top: 2vh;
@@ -129,8 +146,8 @@ main .dealer-display p {
 }
 
 .btn {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .btn button {
   padding: 15px 30px 15px 30px;
@@ -144,4 +161,14 @@ main .dealer-display p {
   background-color: #ff40cf;
   color: #1b1b1b;
   transition: 0.6s ease;
+}
+.btn .ace__1 {
+  color: #1b1b1b;
+  border: 2px solid #1b1b1b;
+  pointer-events: none;
+}
+.btn .ace__2 {
+  color: #1b1b1b;
+  border: 2px solid #1b1b1b;
+  pointer-events: none;
 }

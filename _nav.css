@@ -23,3 +23,16 @@ nav .btn__left:hover {
   color: #1b1b1b;
   transition: 0.6s ease;
 }
+nav .btn__right {
+  width: 5vw;
+  height: 10vh;
+  border: 2px solid #ff40cf;
+  background-color: #1b1b1b;
+  color: #ff40cf;
+  font-size: 20px;
+}
+nav .btn__right:hover {
+  background-color: #ff40cf;
+  color: #1b1b1b;
+  transition: 0.6s ease;
+}
