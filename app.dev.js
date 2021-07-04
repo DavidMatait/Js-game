@@ -44,8 +44,8 @@ hit.addEventListener('click', function () {
   }
 }); // create settle button to run automatically after player decided own result
 
-var repeater = true;
 settle.addEventListener('click', function () {
+  // make button self clicking
   function clickButton(event) {
     if (added2 <= 17) {
       settle.click();
@@ -54,7 +54,7 @@ settle.addEventListener('click', function () {
     }
   }
 
-  setInterval(clickButton, 2000); //pick random item from array
+  setTimeout(clickButton, 1 * 1500); //pick random item from array
 
   var randomItem = cardValues[Math.floor(Math.random() * cardValues.length)];
   var newDisplayD = '';

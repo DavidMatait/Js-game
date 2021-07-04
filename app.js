@@ -47,18 +47,19 @@ if(playerDisplay.innerHTML===playerM.innerHTML && added<=21){
   });
 
 // create settle button to run automatically after player decided own result
-let repeater=true;
 
 settle.addEventListener('click', function() {
-  
 
+// make button self clicking
   function clickButton(event) {
     if(added2<=17){
   settle.click();
   }else{
     event.preventDefault()
   }}
-  setInterval(clickButton, 2000);
+ setTimeout(clickButton,1*1500);
+
+
 
 
   //pick random item from array
