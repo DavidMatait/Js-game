@@ -73,29 +73,28 @@ settle.addEventListener('click', function () {
   } else if (addValueD != parsedValue2 && added2 <= 21) {
     added2 = added2 + parsedValue2[0];
     dealerDisplay.innerHTML = addValueD;
-    dealerM.innerHTML = added2;
+    dealerM.innerHTML = added2; //compare results
 
-    if (dealerM.innerHTML > 21) {
-      dealerM.innerHTML = 0;
-      dealerDisplay.innerHTML = "You lost!";
-    } //compare results
-
-
-    if (added > added2 && added2 > 17) {
-      dealerM.innerHTML = 0;
-      dealerDisplay.innerHTML = added2;
+    if (added > added2 && added2 > 17 && added2 <= 21) {
+      dealerM.innerHTML = added2;
+      dealerDisplay.innerHTML = 0;
       playerM.innerHTML = added;
       playerDisplay.innerHTML = "You won!";
-    } else if (added === added2 && added2 > 17) {
+    } else if (added === added2 && added2 > 17 && added2 <= 21) {
       dealerM.innerHTML = added2;
       dealerDisplay.innerHTML = "Draw!";
       playerM.innerHTML = added;
       playerDisplay.innerHTML = "Draw!";
-    } else if (added < added2 && added2 > 17) {
+    } else if (added < added2 && added2 > 17 && added2 <= 21) {
       dealerM.innerHTML = added2;
-      dealerDisplay.innerHTML = added2;
+      dealerDisplay.innerHTML = 0;
       playerM.innerHTML = added;
       playerDisplay.innerHTML = "You lost!";
+    } else if (added2 > 21) {
+      dealerM.innerHTML = added2;
+      dealerDisplay.innerHTML = 0;
+      playerM.innerHTML = added;
+      playerDisplay.innerHTML = "You won!";
     }
   }
 }); //create 1-2 player slots
