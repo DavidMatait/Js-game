@@ -39,6 +39,11 @@ if(playerDisplay.innerHTML===playerM.innerHTML && added<=21){
   playerDisplay.innerHTML =addValueP;
   playerM.innerHTML=added;
 
+  if(added>21){
+    playerM.innerHTML=0;
+    playerDisplay.innerHTML="You lost!";
+  }
+
 }
   });
 
@@ -74,22 +79,22 @@ settle.addEventListener('click', function() {
    dealerM.innerHTML=added2;
 
 //compare results
-   if(added>added2 && added2>17 && added2<=21){
+   if(added>added2 && added2>=17 && added2<=21){
     dealerM.innerHTML=added2;
     dealerDisplay.innerHTML=0;
     playerM.innerHTML=added;
     playerDisplay.innerHTML="You won!";
-  } else if(added===added2 && added2>17 && added2<=21){
+  } else if(added===added2 && added2>=17 && added2<=21){
     dealerM.innerHTML=added2;
     dealerDisplay.innerHTML="Draw!";
     playerM.innerHTML=added;
     playerDisplay.innerHTML="Draw!";
-  } else if(added<added2 && added2>17 && added2<=21){
+  } else if(added<added2 && added2>=17 && added2<=21){
     dealerM.innerHTML=added2;
     dealerDisplay.innerHTML=0;
     playerM.innerHTML=added;
     playerDisplay.innerHTML="You lost!";
-  } else if(added2>21) {
+  } else if(added2>21 && added<=21) {
     dealerM.innerHTML=added2;
     dealerDisplay.innerHTML=0;
     playerM.innerHTML=added;
