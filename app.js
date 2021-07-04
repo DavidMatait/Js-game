@@ -9,6 +9,7 @@ const dealerDisplay=document.querySelector(".display-d");
 const playerDisplay=document.querySelector(".display-p");
 const dealerM=document.querySelector(".display-dm");
 const playerM=document.querySelector(".display-pm");
+const btnLeft=document.querySelector(".btn__left");
 const getRandomItem=(item)=>`<p>${item}<p>`;
 
 //define variables
@@ -103,7 +104,17 @@ settle.addEventListener('click', function() {
  }
    });
 
+   //change theme of the website
+   btnLeft.addEventListener('click', function(){
 
+    if(btnLeft.innerHTML==="Dark"){
+    btnLeft.innerHTML="Light";
+    btnLeft.style.backgroundColor="white";
+    btnLeft.style.color="navy";
+    btnLeft.style.border="2px solid navy";
+    }
+
+   });
 
 
 

@@ -17,7 +17,7 @@
   align-items: center;
   width: 30%;
   height: 88vh;
-  background-color: navy;
+  background-color: #1b1b1b;
 }
 .left h2 {
   margin: 0 50px 0 50px;
@@ -27,12 +27,12 @@
 }
 .left .list {
   margin: 0 20px 0 20px;
-  border: 2px solid white;
+  border: 2px solid #ff40cf;
   border-radius: 30px;
 }
 .left .list li {
   margin: 30px;
-  color: white;
+  color: #ff40cf;
   font-size: 20px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -45,18 +45,18 @@
   align-items: center;
   width: 30%;
   height: 88vh;
-  background-color: navy;
+  background-color: #1b1b1b;
 }
 
 main {
-  margin: 2vh 20px 0 20px;
+  margin-top: 2vh;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
   width: 40%;
   height: 88vh;
-  background-color: navy;
+  background-color: #1b1b1b;
 }
 main .dealer {
   display: flex;
@@ -67,8 +67,8 @@ main .dealer .div__card-dealer {
   margin-left: 20px;
   width: 4vw;
   height: 12vh;
-  border: 2px solid white;
-  background-color: navy;
+  border: 2px solid #ff40cf;
+  background-color: #1b1b1b;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -87,8 +87,8 @@ main .player .div__card-player {
   margin-left: 20px;
   width: 4vw;
   height: 12vh;
-  border: 2px solid white;
-  background-color: navy;
+  border: 2px solid #ff40cf;
+  background-color: #1b1b1b;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -99,8 +99,8 @@ main .player .div__card-player p {
   color: white;
 }
 main .dealer-display {
-  border: 2px solid white;
-  background-color: navy;
+  border: 2px solid #ff40cf;
+  background-color: #1b1b1b;
   border-radius: 20px;
   height: 25vh;
   width: 10vw;
@@ -114,11 +114,11 @@ main .dealer-display p {
 }
 
 .div__display {
-  border: 2px solid white;
+  border: 2px solid #ff40cf;
   border-radius: 20px;
   height: 25vh;
   width: 10vw;
-  background-color: navy;
+  background-color: #1b1b1b;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,13 +135,13 @@ main .dealer-display p {
 .btn button {
   padding: 15px 30px 15px 30px;
   margin: 15px;
-  border: 2px solid white;
+  border: 2px solid #ff40cf;
   border-radius: 10px;
-  background-color: navy;
-  color: white;
+  background-color: #1b1b1b;
+  color: #ff40cf;
 }
 .btn button:hover {
-  background-color: white;
-  color: navy;
+  background-color: #ff40cf;
+  color: #1b1b1b;
   transition: 0.6s ease;
 }

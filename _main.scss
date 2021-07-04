@@ -1,3 +1,5 @@
+@import "_variables";
+
 *{
   padding:0;
   margin:0;
@@ -17,7 +19,7 @@
   align-items: center;
   width:30%;
   height:88vh;
-  background-color: navy;
+  background-color: $sec-color;
 
   h2{
   margin:0 50px 0 50px;
@@ -28,13 +30,13 @@
 
   .list{
     margin:0 20px 0 20px ;
-    border:2px solid white;
+    border:2px solid $prm-color;
     border-radius: 30px;
   }
 
   .list li{
     margin:30px;
-    color:white;
+    color:$prm-color;
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
@@ -48,18 +50,18 @@
   align-items: center;
   width:30%;
   height:88vh;
-  background-color: navy;
+  background-color: $sec-color;
 }
 
 main{
-  margin:2vh 20px 0 20px;
+  margin-top:2vh;
   display:flex;
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
   width:40%;
   height:88vh;
-  background-color: navy;
+  background-color: $sec-color;
   
 
   .dealer{
@@ -71,8 +73,8 @@ main{
       margin-left:20px;
       width:4vw;
       height: 12vh;
-      border:2px solid white;
-      background-color: navy;
+      border:2px solid $prm-color;
+      background-color: $sec-color;
       border-radius:10px;
       display: flex;
       justify-content: center;
@@ -94,8 +96,8 @@ main{
       margin-left:20px;
       width:4vw;
       height: 12vh;
-      border:2px solid white;
-      background-color: navy;
+      border:2px solid $prm-color;
+      background-color: $sec-color;
       border-radius:10px;
       display: flex;
       justify-content: center;
@@ -109,8 +111,8 @@ main{
   }
 
   .dealer-display{
-    border:2px solid white;
-    background-color: navy;
+    border:2px solid $prm-color;
+    background-color: $sec-color;
     border-radius:20px;
     height: 25vh;
     width:10vw;
@@ -127,11 +129,11 @@ main{
 
 
 .div__display{
-  border:2px solid white;
+  border:2px solid $prm-color;
     border-radius:20px;
     height: 25vh;
     width:10vw;
-    background-color: navy;
+    background-color: $sec-color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,14 +151,14 @@ main{
   button{
     padding:15px 30px 15px 30px;
     margin:15px;
-    border:2px solid white;
+    border:2px solid $prm-color;
     border-radius: 10px;
-    background-color: navy;
-    color:white;
+    background-color: $sec-color;
+    color:$prm-color;
 
     &:hover{
-      background-color: white;
-      color:navy;
+      background-color: $prm-color;
+      color:$sec-color;
       transition: 0.6s ease;
     }
 

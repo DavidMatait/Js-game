@@ -10,6 +10,7 @@ var dealerDisplay = document.querySelector(".display-d");
 var playerDisplay = document.querySelector(".display-p");
 var dealerM = document.querySelector(".display-dm");
 var playerM = document.querySelector(".display-pm");
+var btnLeft = document.querySelector(".btn__left");
 
 var getRandomItem = function getRandomItem(item) {
   return "<p>".concat(item, "<p>");
@@ -96,6 +97,15 @@ settle.addEventListener('click', function () {
       playerM.innerHTML = added;
       playerDisplay.innerHTML = "You won!";
     }
+  }
+}); //change theme of the website
+
+btnLeft.addEventListener('click', function () {
+  if (btnLeft.innerHTML === "Dark") {
+    btnLeft.innerHTML = "Light";
+    btnLeft.style.backgroundColor = "white";
+    btnLeft.style.color = "navy";
+    btnLeft.style.border = "2px solid navy";
   }
 }); //create 1-2 player slots
 //game has 3 buttons for each player
