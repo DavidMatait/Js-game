@@ -12,6 +12,10 @@ var playerDisplay = document.querySelector(".display-p");
 var dealerM = document.querySelector(".display-dm");
 var playerM = document.querySelector(".display-pm");
 var btnLeft = document.querySelector(".btn__left");
+var btnRight = document.querySelector(".btn__right");
+var headerR = document.querySelector(".rules");
+var listR = document.querySelector(".list");
+var listItem = document.querySelectorAll(".li__left");
 
 var getRandomItem = function getRandomItem(item) {
   return "<p>".concat(item, "<p>");
@@ -19,7 +23,12 @@ var getRandomItem = function getRandomItem(item) {
 
 
 var added = '';
-var added2 = ''; //use hit button to add random item on display + add current random item to smaller display
+var added2 = ''; //prevent page refresh
+
+window.onbeforeunload = function () {
+  return "Pls stay and play!";
+}; //use hit button to add random item on display + add current random item to smaller display
+
 
 hit.addEventListener('click', function () {
   //pick random item from array
@@ -36,7 +45,6 @@ hit.addEventListener('click', function () {
     playerDisplay.innerHTML = addValueP;
     playerM.innerHTML = added;
   } else if (addValueP != parsedValue2 && added <= 21) {
-    console.log(added);
     added = added + parsedValue2[0];
     playerDisplay.innerHTML = addValueP;
     playerM.innerHTML = added;
@@ -44,6 +52,10 @@ hit.addEventListener('click', function () {
     if (added > 21) {
       playerM.innerHTML = 0;
       playerDisplay.innerHTML = "You lost!";
+
+      if (playerDisplay.innerHTML === "You lost!") {
+        playerDisplay.style.fontSize = "30px";
+      }
     }
   }
 }); // create settle button to run automatically after player decided own result
@@ -53,7 +65,7 @@ settle.addEventListener('click', function () {
   function clickButton(event) {
     if (added2 <= 17) {
       settle.click();
-    } else {
+    } else if (added2 > 17 && added2 <= 21) {
       event.preventDefault();
     }
   }
@@ -116,12 +128,31 @@ settle.addEventListener('click', function () {
       }
     }
   }
-}); //Ace button
+}); //Create reset button
 
-if (playerDisplay.innerHTML === "1") {} //  rgb(255, 64, 207)
+btnRight.addEventListener('click', function () {
+  added = 0;
+  added2 = 0;
+  playerDisplay.innerHTML = 0;
+  dealerDisplay.innerHTML = 0;
+  playerM.innerHTML = 0;
+  dealerM.innerHTML = 0;
+  playerDisplay.style.fontSize = "110px";
+  dealerDisplay.style.fontSize = "110px";
+}); //ace buttons
+
+ace1.addEventListener('click', function () {
+  if (playerDisplay.innerHTML == "Ace" && playerM.innerHTML == 0) {
+    playerDisplay.innerHTML = 1;
+    playerM.innerHTML = 1;
+    added = 1;
+  } else if (playerDisplay.innerHTML == "Ace") {
+    playerDisplay.innerHTML = 1;
+    added = added + 1;
+  }
+}); //  rgb(255, 64, 207)
 //  rgb(27,27,27)
 //change theme of the website
-
 
 btnLeft.addEventListener('click', function () {
   if (btnLeft.innerHTML === "Dark") {
@@ -131,7 +162,15 @@ btnLeft.addEventListener('click', function () {
     btnLeft.style.color = "rgb(27,27,27)";
     btnLeft.style.border = " 2px solid rgb(27,27,27)";
     document.querySelector(".nav").style.backgroundColor = "rgb(255, 64, 207)";
-    document.querySelector(".h1").style.color = "rgb(27,27,27)"; //main section
+    document.querySelector(".h1").style.color = "rgb(27,27,27)";
+    btnRight.style.backgroundColor = "rgb(255, 64, 207)";
+    btnRight.style.color = "rgb(27,27,27)";
+    btnRight.style.border = " 2px solid rgb(27,27,27)"; //main section
+
+    document.querySelector(".left").style.backgroundColor = "rgb(255, 64, 207)";
+    headerR.style.color = "rgb(27,27,27)";
+    listR.style.border = "2px solid rgb(27,27,27)";
+    listItem.style.color = "rgb(27,27,27)";
   }
 }); //create 1-2 player slots
 //game has 3 buttons for each player

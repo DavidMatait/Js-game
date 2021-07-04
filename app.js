@@ -12,11 +12,20 @@ const playerDisplay=document.querySelector(".display-p");
 const dealerM=document.querySelector(".display-dm");
 const playerM=document.querySelector(".display-pm");
 const btnLeft=document.querySelector(".btn__left");
+const btnRight=document.querySelector(".btn__right");
+const headerR=document.querySelector(".rules");
+const listR=document.querySelector(".list");
+const listItem=document.querySelectorAll(".li__left");
 const getRandomItem=(item)=>`<p>${item}<p>`;
 
 //define variables
 let added='';
 let added2='';
+
+//prevent page refresh
+window.onbeforeunload = function() {
+  return "Pls stay and play!"
+};
 
 //use hit button to add random item on display + add current random item to smaller display
 hit.addEventListener('click', function() {
@@ -36,17 +45,18 @@ if(playerDisplay.innerHTML===playerM.innerHTML && added<=21){
   playerM.innerHTML=added;
 
 }else if(addValueP!=parsedValue2 && added<=21 ){
-  console.log(added);
-  added=added+parsedValue2[0];
 
+  added=added+parsedValue2[0];
   playerDisplay.innerHTML =addValueP;
   playerM.innerHTML=added;
 
   if(added>21){
     playerM.innerHTML=0;
     playerDisplay.innerHTML="You lost!";
+    if(playerDisplay.innerHTML==="You lost!"){
+      playerDisplay.style.fontSize="30px";
+    }
   }
-
 }
   });
 
@@ -57,7 +67,7 @@ settle.addEventListener('click', function() {
   function clickButton(event) {
     if(added2<=17){
   settle.click();
-  }else{
+  }else if(added2>17 && added2<=21){
     event.preventDefault()
   }}
  setTimeout(clickButton,1*1500);
@@ -123,16 +133,40 @@ settle.addEventListener('click', function() {
  }
    });
 
-   //Ace button
-   if(playerDisplay.innerHTML==="1"){
-     
-   }
+
+//Create reset button
+btnRight.addEventListener('click', function(){
+  added=0;
+  added2=0;
+  playerDisplay.innerHTML=0;
+  dealerDisplay.innerHTML=0;
+  playerM.innerHTML=0;
+  dealerM.innerHTML=0;
+  playerDisplay.style.fontSize="110px";
+  dealerDisplay.style.fontSize="110px";
+})
 
 
 
 
 
 
+
+
+   //ace buttons
+
+
+   ace1.addEventListener('click', function(){
+
+    if(playerDisplay.innerHTML=="Ace" && playerM.innerHTML==0){
+      playerDisplay.innerHTML=1;
+      playerM.innerHTML=1;
+      added=1;
+    }else if(playerDisplay.innerHTML=="Ace"){
+      playerDisplay.innerHTML=1;
+      added=added+1;
+    }
+   })
 
 
 
@@ -160,10 +194,14 @@ settle.addEventListener('click', function() {
     btnLeft.style.border= " 2px solid rgb(27,27,27)";
     document.querySelector(".nav").style.backgroundColor="rgb(255, 64, 207)";
     document.querySelector(".h1").style.color="rgb(27,27,27)";
-
+    btnRight.style.backgroundColor="rgb(255, 64, 207)";
+    btnRight.style.color="rgb(27,27,27)";
+    btnRight.style.border= " 2px solid rgb(27,27,27)";
 //main section
-    
-
+  document.querySelector(".left").style.backgroundColor="rgb(255, 64, 207)";
+  headerR.style.color="rgb(27,27,27)";
+  listR.style.border="2px solid rgb(27,27,27)";
+  listItem.style.color="rgb(27,27,27)";
     }
 
    });
