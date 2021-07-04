@@ -51,26 +51,29 @@
   width:30%;
   height:88vh;
   background-color: $sec-color;
+
   h2{
-    margin:0 50px 0 50px;
-    color:white;
-    font-size: 30px;
+  margin:0 50px 0 50px;
+  color:white;
+  font-size: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .top10{
+    margin:0 20px 0 20px ;
+    border:2px solid $prm-color;
+    border-radius: 30px;
+  }
+
+  .top10 li{
+    margin:30px;
+    color:$prm-color;
+    font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
-  
-    .list{
-      margin:0 20px 0 20px ;
-      border:2px solid $prm-color;
-      border-radius: 30px;
-    }
-  
-    .list li{
-      margin:30px;
-      color:$prm-color;
-      font-size: 20px;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
+  }
 }
+
+
 
 main{
   margin-top:2vh;
@@ -180,15 +183,7 @@ main{
       color:$sec-color;
       transition: 0.6s ease;
     }
-
   }
- // .ace__1{
- //   color:$sec-color;
- //  border:2px solid $sec-color;
- // }
- // .ace__2{
- //   color:$sec-color;
- //   border:2px solid $sec-color;
- // }
 }
+
 

@@ -6,19 +6,28 @@ const cardValues=[2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,
 const hit=document.querySelector(".btn__hit");
 const settle=document.querySelector(".btn__settle");
 const ace1=document.querySelector(".ace__1");
-const ace11=document.querySelector(".ace__11");
+const ace11=document.querySelector(".ace__2");
 const dealerDisplay=document.querySelector(".display-d");
 const playerDisplay=document.querySelector(".display-p");
 const dealerM=document.querySelector(".display-dm");
 const playerM=document.querySelector(".display-pm");
 const btnLeft=document.querySelector(".btn__left");
 const btnRight=document.querySelector(".btn__right");
+
+//const for styling
 const headerR=document.querySelector(".rules");
 const listR=document.querySelector(".list");
 const listItem=document.getElementsByClassName("li__left");
 const mainP=document.querySelector(".main");
 const dealerStyle=document.querySelector(".dealer-display");
 const cardD=document.querySelector(".div__card-dealer");
+const playerStyle=document.querySelector(".div__display");
+const cardP=document.querySelector(".div__card-player");
+const headerH=document.getElementsByClassName("h22")[0];
+const listH=document.getElementsByClassName("top10")[0];
+const leaderboard=document.getElementsByClassName("top");
+
+//get random item event -> display item
 const getRandomItem=(item)=>`<p>${item}<p>`;
 
 //define variables
@@ -199,6 +208,39 @@ btnRight.addEventListener('click', function(){
   cardD.style.border="3px solid rgb(27,27,27)";
   dealerDisplay.style.color="rgb(27,27,27)";
   dealerM.style.color="rgb(27,27,27)";
+  playerStyle.style.border="3px solid rgb(27,27,27)";
+  playerStyle.style.backgroundColor="rgb(255, 64, 207)";
+  cardP.style.backgroundColor="rgb(255, 64, 207)";
+  cardP.style.border="3px solid rgb(27,27,27)";
+  playerDisplay.style.color="rgb(27,27,27)";
+  playerM.style.color="rgb(27,27,27)";
+  hit.style.color="rgb(27,27,27)";
+  hit.style.backgroundColor="rgb(255, 64, 207)";
+  hit.style.border="3px solid rgb(27,27,27)"
+  settle.style.color="rgb(27,27,27)";
+  settle.style.backgroundColor="rgb(255, 64, 207)";
+  settle.style.border="3px solid rgb(27,27,27)";
+  ace1.style.color="rgb(27,27,27)";
+  ace1.style.backgroundColor="rgb(255, 64, 207)";
+  ace1.style.border="3px solid rgb(27,27,27)";
+  ace11.style.color="rgb(27,27,27)";
+  ace11.style.backgroundColor="rgb(255, 64, 207)";
+  ace11.style.border="3px solid rgb(27,27,27)"
+  document.querySelector(".right").style.backgroundColor="rgb(255, 64, 207)";
+  document.querySelector(".h22").style.color="rgb(27,27,27)";
+  listH.style.backgroundColor="rgb(255, 64, 207)";
+  leaderboard[0].style.color="rgb(27,27,27)";
+  leaderboard[1].style.color="rgb(27,27,27)";
+  leaderboard[2].style.color="rgb(27,27,27)";
+  leaderboard[3].style.color="rgb(27,27,27)";
+  leaderboard[4].style.color="rgb(27,27,27)";
+  leaderboard[5].style.color="rgb(27,27,27)";
+  leaderboard[6].style.color="rgb(27,27,27)";
+  leaderboard[7].style.color="rgb(27,27,27)";
+  leaderboard[8].style.color="rgb(27,27,27)";
+  leaderboard[9].style.color="rgb(27,27,27)";
+  listH.style.border="3px solid rgb(27,27,27)";
+
     }else if(btnLeft.innerHTML==="Light"){
     // nav bar
     btnLeft.innerHTML="Dark";
@@ -228,6 +270,38 @@ btnRight.addEventListener('click', function(){
       cardD.style.border="";
       dealerDisplay.style.color="";
       dealerM.style.color="";
+      playerStyle.style.border="";
+      playerStyle.style.backgroundColor="";
+      cardP.style.backgroundColor="";
+      cardP.style.border="";
+      playerDisplay.style.color="";
+      playerM.style.color="";
+      hit.style.color="";
+      hit.style.backgroundColor="";
+      hit.style.border=""
+      settle.style.color="";
+      settle.style.backgroundColor="";
+      settle.style.border="";
+      ace1.style.color="";
+      ace1.style.backgroundColor="";
+      ace1.style.border="";
+      ace11.style.color="";
+      ace11.style.backgroundColor="";
+      ace11.style.border="";
+      document.querySelector(".right").style.backgroundColor="";
+      headerH.style.color="";
+      listH.style.backgroundColor="";
+      leaderboard[0].style.color="";
+      leaderboard[1].style.color="";
+      leaderboard[2].style.color="";
+      leaderboard[3].style.color="";
+      leaderboard[4].style.color="";
+      leaderboard[5].style.color="";
+      leaderboard[6].style.color="";
+      leaderboard[7].style.color="";
+      leaderboard[8].style.color="";
+      leaderboard[9].style.color="";
+      listH.style.border="";
     }
 
    });

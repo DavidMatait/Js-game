@@ -53,12 +53,12 @@
   font-size: 30px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.right .list {
+.right .top10 {
   margin: 0 20px 0 20px;
   border: 2px solid #ff40cf;
   border-radius: 30px;
 }
-.right .list li {
+.right .top10 li {
   margin: 30px;
   color: #ff40cf;
   font-size: 20px;
