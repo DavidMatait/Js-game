@@ -20,6 +20,12 @@ nav{
   background-color: $sec-color;
   color:$prm-color;
   font-size: 20px;
+
+  &:hover{
+    background-color: $prm-color;
+    color:$sec-color;
+    transition: 0.6s ease;
+  }
 }
 
 }

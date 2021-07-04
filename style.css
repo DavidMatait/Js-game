@@ -166,3 +166,8 @@ nav .btn__left {
   color: #ff40cf;
   font-size: 20px;
 }
+nav .btn__left:hover {
+  background-color: #ff40cf;
+  color: #1b1b1b;
+  transition: 0.6s ease;
+}

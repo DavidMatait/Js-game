@@ -98,14 +98,19 @@ settle.addEventListener('click', function () {
       playerDisplay.innerHTML = "You won!";
     }
   }
-}); //change theme of the website
+}); //  rgb(255, 64, 207)
+//  rgb(27,27,27)
+//change theme of the website
 
 btnLeft.addEventListener('click', function () {
   if (btnLeft.innerHTML === "Dark") {
+    // nav bar
     btnLeft.innerHTML = "Light";
-    btnLeft.style.backgroundColor = "white";
-    btnLeft.style.color = "navy";
-    btnLeft.style.border = "2px solid navy";
+    btnLeft.style.backgroundColor = "rgb(255, 64, 207)";
+    btnLeft.style.color = "rgb(27,27,27)";
+    btnLeft.style.border = " 2px solid rgb(27,27,27)";
+    document.querySelector(".nav").style.backgroundColor = "rgb(255, 64, 207)";
+    document.querySelector(".h1").style.color = "rgb(27,27,27)"; //main section
   }
 }); //create 1-2 player slots
 //game has 3 buttons for each player

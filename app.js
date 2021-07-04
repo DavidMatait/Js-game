@@ -1,6 +1,7 @@
 
 //create the array of card value sets, const for buttons,const displays
 //define const
+
 const cardValues=[2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,1,1,1,1];
 const hit=document.querySelector(".btn__hit");
 const settle=document.querySelector(".btn__settle");
@@ -104,14 +105,24 @@ settle.addEventListener('click', function() {
  }
    });
 
+ //  rgb(255, 64, 207)
+ //  rgb(27,27,27)
+
    //change theme of the website
    btnLeft.addEventListener('click', function(){
 
     if(btnLeft.innerHTML==="Dark"){
+// nav bar
     btnLeft.innerHTML="Light";
-    btnLeft.style.backgroundColor="white";
-    btnLeft.style.color="navy";
-    btnLeft.style.border="2px solid navy";
+    btnLeft.style.backgroundColor="rgb(255, 64, 207)";
+    btnLeft.style.color="rgb(27,27,27)";
+    btnLeft.style.border= " 2px solid rgb(27,27,27)";
+    document.querySelector(".nav").style.backgroundColor="rgb(255, 64, 207)";
+    document.querySelector(".h1").style.color="rgb(27,27,27)";
+
+//main section
+    
+
     }
 
    });
