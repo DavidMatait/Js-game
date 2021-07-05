@@ -50,13 +50,21 @@ hit.addEventListener('click', function () {
   }); //add current value to total + determine when player lost
 
   if (playerDisplay.innerHTML === playerM.innerHTML && added <= 21) {
-    added = parsedValue2[0];
-    playerDisplay.innerHTML = addValueP;
-    playerM.innerHTML = added;
+    if (playerDisplay.innerHTML === "<p>1</p><p></p>") {
+      playerM.innerHTML = 1;
+    } else {
+      added = parsedValue2[0];
+      playerDisplay.innerHTML = addValueP;
+      playerM.innerHTML = added;
+    }
   } else if (addValueP != parsedValue2 && added <= 21) {
-    added = added + parsedValue2[0];
-    playerDisplay.innerHTML = addValueP;
-    playerM.innerHTML = added;
+    if (playerDisplay.innerHTML === "<p>1</p><p></p>") {
+      playerM.innerHTML = 1;
+    } else {
+      added = added + parsedValue2[0];
+      playerDisplay.innerHTML = addValueP;
+      playerM.innerHTML = added;
+    }
 
     if (added > 21) {
       playerM.innerHTML = 0;
@@ -152,18 +160,22 @@ btnRight.addEventListener('click', function () {
   dealerM.innerHTML = 0;
   playerDisplay.style.fontSize = "110px";
   dealerDisplay.style.fontSize = "110px";
+  console.log(li);
+
+  if (btnLeft.innerHTML === "Dark") {
+    li.style.color = "rgb(255, 64, 207)";
+  } else if (btnLeft.innerHTML === "Light") {
+    li.style.color = "rgb(27,27,27)";
+  }
 }); //ace buttons
-// ace1.addEventListener('click', function(){
-// if(playerDisplay.innerHTML=="Ace" && playerM.innerHTML==0){
-//    playerDisplay.innerHTML=1;
-//   playerM.innerHTML=1;
-//   added=1;
-//  }else if(playerDisplay.innerHTML=="Ace"){
-//    playerDisplay.innerHTML=1;
-//    added=added+1;
-//  }
-//  })
-//  rgb(255, 64, 207)
+
+ace1.addEventListener('click', function () {
+  if (playerDisplay.innerHTML === "<p>1</p><p></p>") {
+    added = added + 11;
+    playerM.innerHTML = added;
+    playerDisplay.innerHTML = 11;
+  }
+}); //  rgb(255, 64, 207)
 //  rgb(27,27,27)
 //change theme of the website
 
@@ -208,13 +220,10 @@ btnLeft.addEventListener('click', function () {
     hit.style.border = "3px solid rgb(27,27,27)";
     settle.style.color = "rgb(27,27,27)";
     settle.style.backgroundColor = "rgb(255, 64, 207)";
-    settle.style.border = "3px solid rgb(27,27,27)"; // ace1.style.color="rgb(27,27,27)";
-    // ace1.style.backgroundColor="rgb(255, 64, 207)";
-    // ace1.style.border="3px solid rgb(27,27,27)";
-    // ace11.style.color="rgb(27,27,27)";
-    // ace11.style.backgroundColor="rgb(255, 64, 207)";
-    // ace11.style.border="3px solid rgb(27,27,27)"
-
+    settle.style.border = "3px solid rgb(27,27,27)";
+    ace1.style.color = "rgb(27,27,27)";
+    ace1.style.backgroundColor = "rgb(255, 64, 207)";
+    ace1.style.border = "3px solid rgb(27,27,27)";
     document.querySelector(".right").style.backgroundColor = "rgb(255, 64, 207)";
     document.querySelector(".h22").style.color = "rgb(27,27,27)";
     listH.style.backgroundColor = "rgb(255, 64, 207)";
@@ -259,13 +268,10 @@ btnLeft.addEventListener('click', function () {
     hit.style.border = "";
     settle.style.color = "";
     settle.style.backgroundColor = "";
-    settle.style.border = ""; // ace1.style.color="";
-    //  ace1.style.backgroundColor="";
-    // ace1.style.border="";
-    // ace11.style.color="";
-    //  ace11.style.backgroundColor="";
-    // ace11.style.border="";
-
+    settle.style.border = "";
+    ace1.style.color = "";
+    ace1.style.backgroundColor = "";
+    ace1.style.border = "";
     document.querySelector(".right").style.backgroundColor = "";
     headerH.style.color = "";
     listH.style.backgroundColor = "";
