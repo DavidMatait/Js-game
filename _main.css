@@ -57,6 +57,7 @@
   margin: 0 20px 0 20px;
   border: 2px solid #ff40cf;
   border-radius: 30px;
+  width: 20vw;
 }
 .right .top10 li {
   margin: 30px;
@@ -146,8 +147,8 @@ main .dealer-display p {
 }
 
 .btn {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
 }
 .btn button {
   padding: 15px 30px 15px 30px;

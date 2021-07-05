@@ -57,6 +57,7 @@
   margin: 0 20px 0 20px;
   border: 2px solid #ff40cf;
   border-radius: 30px;
+  width: 20vw;
 }
 .right .top10 li {
   margin: 30px;
@@ -146,8 +147,8 @@ main .dealer-display p {
 }
 
 .btn {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
 }
 .btn button {
   padding: 15px 30px 15px 30px;
@@ -176,8 +177,9 @@ nav h1 {
   font-size: 40px;
 }
 nav .btn__left {
+  margin: 2px;
   width: 5vw;
-  height: 10vh;
+  height: 9vh;
   border: 2px solid #ff40cf;
   background-color: #1b1b1b;
   color: #ff40cf;
@@ -189,8 +191,9 @@ nav .btn__left:hover {
   transition: 0.6s ease;
 }
 nav .btn__right {
+  margin: 2px;
   width: 5vw;
-  height: 10vh;
+  height: 9vh;
   border: 2px solid #ff40cf;
   background-color: #1b1b1b;
   color: #ff40cf;

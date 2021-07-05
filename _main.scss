@@ -63,6 +63,7 @@
     margin:0 20px 0 20px ;
     border:2px solid $prm-color;
     border-radius: 30px;
+    width:20vw;
   }
 
   .top10 li{
@@ -167,8 +168,8 @@ main{
 }
 
 .btn{
-  display:grid;
-  grid-template-columns:  1fr 1fr;
+  display:flex;
+  justify-content: center;
 
   button{
     padding:15px 30px 15px 30px;

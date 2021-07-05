@@ -140,6 +140,10 @@ settle.addEventListener('click', function () {
 }); //Create reset button
 
 btnRight.addEventListener('click', function () {
+  var li = document.createElement("li");
+  li.classList.add("lis");
+  li.appendChild(document.createTextNode(playerDisplay.innerHTML));
+  listH.appendChild(li);
   added = 0;
   added2 = 0;
   playerDisplay.innerHTML = 0;
@@ -149,17 +153,17 @@ btnRight.addEventListener('click', function () {
   playerDisplay.style.fontSize = "110px";
   dealerDisplay.style.fontSize = "110px";
 }); //ace buttons
-
-ace1.addEventListener('click', function () {
-  if (playerDisplay.innerHTML == "Ace" && playerM.innerHTML == 0) {
-    playerDisplay.innerHTML = 1;
-    playerM.innerHTML = 1;
-    added = 1;
-  } else if (playerDisplay.innerHTML == "Ace") {
-    playerDisplay.innerHTML = 1;
-    added = added + 1;
-  }
-}); //  rgb(255, 64, 207)
+// ace1.addEventListener('click', function(){
+// if(playerDisplay.innerHTML=="Ace" && playerM.innerHTML==0){
+//    playerDisplay.innerHTML=1;
+//   playerM.innerHTML=1;
+//   added=1;
+//  }else if(playerDisplay.innerHTML=="Ace"){
+//    playerDisplay.innerHTML=1;
+//    added=added+1;
+//  }
+//  })
+//  rgb(255, 64, 207)
 //  rgb(27,27,27)
 //change theme of the website
 
@@ -204,26 +208,16 @@ btnLeft.addEventListener('click', function () {
     hit.style.border = "3px solid rgb(27,27,27)";
     settle.style.color = "rgb(27,27,27)";
     settle.style.backgroundColor = "rgb(255, 64, 207)";
-    settle.style.border = "3px solid rgb(27,27,27)";
-    ace1.style.color = "rgb(27,27,27)";
-    ace1.style.backgroundColor = "rgb(255, 64, 207)";
-    ace1.style.border = "3px solid rgb(27,27,27)";
-    ace11.style.color = "rgb(27,27,27)";
-    ace11.style.backgroundColor = "rgb(255, 64, 207)";
-    ace11.style.border = "3px solid rgb(27,27,27)";
+    settle.style.border = "3px solid rgb(27,27,27)"; // ace1.style.color="rgb(27,27,27)";
+    // ace1.style.backgroundColor="rgb(255, 64, 207)";
+    // ace1.style.border="3px solid rgb(27,27,27)";
+    // ace11.style.color="rgb(27,27,27)";
+    // ace11.style.backgroundColor="rgb(255, 64, 207)";
+    // ace11.style.border="3px solid rgb(27,27,27)"
+
     document.querySelector(".right").style.backgroundColor = "rgb(255, 64, 207)";
     document.querySelector(".h22").style.color = "rgb(27,27,27)";
     listH.style.backgroundColor = "rgb(255, 64, 207)";
-    leaderboard[0].style.color = "rgb(27,27,27)";
-    leaderboard[1].style.color = "rgb(27,27,27)";
-    leaderboard[2].style.color = "rgb(27,27,27)";
-    leaderboard[3].style.color = "rgb(27,27,27)";
-    leaderboard[4].style.color = "rgb(27,27,27)";
-    leaderboard[5].style.color = "rgb(27,27,27)";
-    leaderboard[6].style.color = "rgb(27,27,27)";
-    leaderboard[7].style.color = "rgb(27,27,27)";
-    leaderboard[8].style.color = "rgb(27,27,27)";
-    leaderboard[9].style.color = "rgb(27,27,27)";
     listH.style.border = "3px solid rgb(27,27,27)";
   } else if (btnLeft.innerHTML === "Light") {
     // nav bar
@@ -265,13 +259,13 @@ btnLeft.addEventListener('click', function () {
     hit.style.border = "";
     settle.style.color = "";
     settle.style.backgroundColor = "";
-    settle.style.border = "";
-    ace1.style.color = "";
-    ace1.style.backgroundColor = "";
-    ace1.style.border = "";
-    ace11.style.color = "";
-    ace11.style.backgroundColor = "";
-    ace11.style.border = "";
+    settle.style.border = ""; // ace1.style.color="";
+    //  ace1.style.backgroundColor="";
+    // ace1.style.border="";
+    // ace11.style.color="";
+    //  ace11.style.backgroundColor="";
+    // ace11.style.border="";
+
     document.querySelector(".right").style.backgroundColor = "";
     headerH.style.color = "";
     listH.style.backgroundColor = "";

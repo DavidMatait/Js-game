@@ -14,8 +14,9 @@ nav{
   }
 
 .btn__left{
+  margin:2px;
   width:5vw;
-  height: 10vh;
+  height: 9vh;
   border:2px solid $prm-color;
   background-color: $sec-color;
   color:$prm-color;
@@ -28,8 +29,9 @@ nav{
   }
 }
 .btn__right{
+  margin:2px;
   width:5vw;
-  height: 10vh;
+  height: 9vh;
   border:2px solid $prm-color;
   background-color: $sec-color;
   color:$prm-color;
