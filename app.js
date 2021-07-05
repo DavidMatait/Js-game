@@ -52,22 +52,34 @@ hit.addEventListener('click', function() {
  //add current value to total + determine when player lost
 if(playerDisplay.innerHTML===playerM.innerHTML && added<=21){
 
-  if(playerDisplay.innerHTML==="<p>1</p><p></p>"){
-    playerM.innerHTML=1;
-  } else{
+  if(playerDisplay.innerHTML==="<p>1</p><p></p>" || playerDisplay.innerHTML==="1"){
+    playerDisplay.innerHTML = addValueP;
+    playerM.innerHTML=added;
+  }
+   else if(playerDisplay.innerHTML==="<p>11</p><p></p>"){
+      playerDisplay.innerHTML = addValueP;
+      playerM.innerHTML=added;
+    }
+  else{
   added=parsedValue2[0];
   playerDisplay.innerHTML = addValueP;
   playerM.innerHTML=added;
   }
 }else if(addValueP!=parsedValue2 && added<=21 ){
 
-  if(playerDisplay.innerHTML==="<p>1</p><p></p>"){
-    playerM.innerHTML=1;
-  } else{
+    if(playerDisplay.innerHTML==="<p>1</p><p></p>" || playerDisplay.innerHTML==="<p>11</p><p></p>"){
+      playerDisplay.innerHTML = addValueP;
+      playerM.innerHTML=added;
+    }
+     else if(playerDisplay.innerHTML==="<p>11</p><p></p>"){
+        playerDisplay.innerHTML = addValueP;
+        playerM.innerHTML=added;
+      }
+   else{
   added=added+parsedValue2[0];
   playerDisplay.innerHTML =addValueP;
   playerM.innerHTML=added;
-  }
+   }
   if(added>21){
     playerM.innerHTML=0;
     playerDisplay.innerHTML="You lost!";
@@ -183,7 +195,15 @@ btnRight.addEventListener('click', function(){
     if(playerDisplay.innerHTML==="<p>1</p><p></p>"){
       added=added+11;
       playerM.innerHTML=added;
-      playerDisplay.innerHTML=11;
+      playerDisplay.innerHTML="<p>11</p><p></p>";
+    }else if(playerDisplay.innerHTML==="<p>11</p><p></p>"){
+      added=added-11+1;
+      playerM.innerHTML=added;
+      playerDisplay.innerHTML="1";
+    } else if(playerDisplay.innerHTML==="1"){
+      added=added+11-1;
+      playerM.innerHTML=added;
+      playerDisplay.innerHTML="<p>11</p><p></p>";
     }
   })
   
